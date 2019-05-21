@@ -22,7 +22,6 @@ public class JVMThread {
     public void execute(String method) throws IOException {
         Metaspace metaspace = Metaspace.getInstance();
         String className = method.substring(0, method.lastIndexOf("."));
-        System.out.println(className);/**打印**/
         Map<String, MethodInfo> methodInfoMap = metaspace.getMethodInfoMap();
         if (!methodInfoMap.containsKey(method)){
             ResolutionUtils.resolution(className);

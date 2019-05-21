@@ -37,6 +37,9 @@ public class JVMThread {
                 break;
             }
         }
+        if (codes == null){
+            throw new IOException("not this method "+method);
+        }
         top = new Frame(codeInfo.getMax_stack(), codeInfo.getMax_locals(), top, className);
         top.execute(codes, this);
         System.out.println("线程结束");
